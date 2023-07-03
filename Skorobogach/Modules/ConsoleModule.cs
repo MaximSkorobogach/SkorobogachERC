@@ -112,7 +112,7 @@ namespace Skorobogach.Modules
                 }
 
                 Console.WriteLine(new string('-', 90)); // Разделитель
-                Console.WriteLine($@"Общая цена за все услуги в этом месяце: {
+                Console.WriteLine($@"Общая цена за все услуги за {apartmentInformation.MonthlyAccruals[i].date.ToShortDateString()}: {
                     Math.Round(apartmentInformation.MonthlyAccruals[i].ColdWaterAccrual +
                                apartmentInformation.MonthlyAccruals[i].HotWaterAccrual +
                                apartmentInformation.MonthlyAccruals[i].HeatEnergyAccrual +
