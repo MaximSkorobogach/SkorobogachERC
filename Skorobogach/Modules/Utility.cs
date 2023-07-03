@@ -25,7 +25,7 @@ namespace Skorobogach.Module
         {
             Random rand = new Random();
 
-            Console.WriteLine("Выберите кол-во квартир для генерации");
+            Console.WriteLine("Выберите кол-во квартир для генерации (если требуется только провести зачисления к уже имеющимся квартирам то вводите 0)");
             var ans = Console.ReadLine();
 
             List<ApartmentInformation> tenants = new List<ApartmentInformation>();

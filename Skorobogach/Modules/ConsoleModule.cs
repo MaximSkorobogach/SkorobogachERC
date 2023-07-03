@@ -121,6 +121,8 @@ namespace Skorobogach.Modules
                                apartmentInformation.MonthlyAccruals[i].ElectricNightAccrual, 2),-45}");
                 Console.WriteLine(new string('-', 90)); // Разделитель
             }
+
+            Console.WriteLine();
         }
     }
 }
