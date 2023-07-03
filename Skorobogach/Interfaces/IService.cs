@@ -11,9 +11,21 @@ namespace Skorobogach.Interfaces
     /// </summary>
     public interface IService
     {
+        /// <summary>
+        /// Название сервиса
+        /// </summary>
         public string Name { get; set; }
+        /// <summary>
+        /// Тариф сервиса
+        /// </summary>
         public double Tariff { get; set; }
+        /// <summary>
+        /// Норматив сервиса
+        /// </summary>
         public double Norm { get; set; }
+        /// <summary>
+        /// Название единицы сервиса
+        /// </summary>
         public string Unit { get; set; }
     }
 }

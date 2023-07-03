@@ -43,7 +43,9 @@ namespace Skorobogach
                 // автоматическая
                 case "0":
                     {
-                        Utility.AutomaticGeneration(DB); // запуск автоматической генерации квартир
+                        Console.WriteLine("Выберите кол-во квартир для генерации (если требуется только провести зачисления к уже имеющимся квартирам то вводите 0)");
+                        var count = Console.ReadLine();
+                        DB.AutomaticGeneration(Convert.ToInt32(count)); // запуск автоматической генерации квартир
 
                         //цикл, в котором по кол-ву месяцев запускаем расчет
 

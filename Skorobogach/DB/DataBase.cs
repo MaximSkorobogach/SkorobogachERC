@@ -102,6 +102,34 @@ namespace Skorobogach.DB
 
             return services;
         }
+        /// <summary>
+        /// Автоматическая генерация квартир и наличие их счетчиков и добавление в бд
+        /// </summary>
+        /// <param name="DB">База данных</param>
+        public void AutomaticGeneration(int count)
+        {
+            Random rand = new Random();
+
+            List<ApartmentInformation> tenants = new List<ApartmentInformation>();
+
+            for (int i = 0; i < Convert.ToInt32(count); i++)
+            {
+                int j = rand.Next(2), k = rand.Next(2), l = rand.Next(2);
+
+                ApartmentInformation apartmentInformation = new ApartmentInformation()
+                {
+                    Count = rand.Next(1, 6),
+                    CountColdWater = j == 1,
+                    CountHotWater = k == 1,
+                    CountElectric = l == 1
+                };
+
+                tenants.Add(apartmentInformation);
+            }
+
+            ApartmentInformations.AddRange(tenants);
+            SaveChanges();
+        }
 
         /// <summary>
         /// Удалить всю информацию со всех таблиц

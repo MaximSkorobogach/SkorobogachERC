@@ -18,38 +18,6 @@ namespace Skorobogach.Module
     public static class Utility
     {
         /// <summary>
-        /// Автоматическая генерация квартир и наличие их счетчиков и добавление в бд
-        /// </summary>
-        /// <param name="DB">База данных</param>
-        public static void AutomaticGeneration(DataBase DB)
-        {
-            Random rand = new Random();
-
-            Console.WriteLine("Выберите кол-во квартир для генерации (если требуется только провести зачисления к уже имеющимся квартирам то вводите 0)");
-            var ans = Console.ReadLine();
-
-            List<ApartmentInformation> tenants = new List<ApartmentInformation>();
-
-            for (int i = 0; i < Convert.ToInt32(ans); i++)
-            {
-                int j = rand.Next(2), k = rand.Next(2), l = rand.Next(2);
-
-                ApartmentInformation apartmentInformation = new ApartmentInformation()
-                {
-                    Count = rand.Next(1, 6),
-                    CountColdWater = j == 1,
-                    CountHotWater = k == 1,
-                    CountElectric = l == 1
-                };
-
-                tenants.Add(apartmentInformation);
-            }
-
-            DB.ApartmentInformations.AddRange(tenants);
-            DB.SaveChanges();
-        }
-
-        /// <summary>
         /// Случайные числа для счетчиков
         /// </summary>
         /// <param name="apartment">Квартира</param>

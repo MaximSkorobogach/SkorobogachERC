@@ -46,7 +46,7 @@ namespace Skorobogach.Modules
         /// </summary>
         /// <param name="date">Дата передачи счетчика</param>
         /// <param name="apartmentInformation">Квартира</param>
-        public static void CreateCounterInfo(DateTime date, ApartmentInformation apartmentInformation, ServiceCounter counter)
+        private static void CreateCounterInfo(DateTime date, ApartmentInformation apartmentInformation, ServiceCounter counter)
         {
             Console.WriteLine($"Квартира номер {apartmentInformation.Id}"); // показываем айди квартиры
 
@@ -85,7 +85,7 @@ namespace Skorobogach.Modules
         /// <param name="apartmentInformation">Квартира</param>
         /// <param name="counter">Счетчик</param>
         /// <param name="services">Сервисы</param>
-        public static void CalculateApartment(DateTime date, ApartmentInformation apartmentInformation, ServiceCounter counter, List<IService> services)
+        private static void CalculateApartment(DateTime date, ApartmentInformation apartmentInformation, ServiceCounter counter, List<IService> services)
         {
             if (apartmentInformation.MonthlyAccruals != null && 
                 apartmentInformation.MonthlyAccruals.Any(m => m.date.Year == date.Year & m.date.Month == date.Month))
